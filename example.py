@@ -1,4 +1,4 @@
-# this explitily makes a list, but you could use it directly as the parameter for a for loop:
+# you can make lists explicitly or use them as the input for other functions or operators
 # e.g.
 #   for drive in $(ls /dir | grep "sd").splitlines():
 
