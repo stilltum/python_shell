@@ -3,6 +3,7 @@
 #   for drive in $(ls /dir | grep "sd").splitlines():
 
 # The idea is that all commands within $() are commandline calls, unless it is prepended by another $, in which case it's a script variable
+#   We need to seriously evaluate security implications. Maybe adding a .scope("/directory") function immediatly after the call it applies to?
 
 attached_drives = $(ls "/dev" | grep "sd").splitlines()
 
