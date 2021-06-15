@@ -6,8 +6,8 @@
 
 attached_drives = $(ls "/dev" | grep "sd").splitlines()
 
-mounted_drives = {}
-unmounted_drives = {}
+mounted_drives = []
+unmounted_drives = []
 for drive in attached_drives:
   # The drive is mounted
   #   Note that if nothing is returned from a call it returns an empty list which evaluates to false
