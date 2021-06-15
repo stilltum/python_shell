@@ -9,6 +9,7 @@ attached_drives = $(ls /dir | grep "sd").splitlines()
 mounted_drives = {}
 unmounted_drives = {}
 for drive in attached_drives:
+  # The drive is mounted
   if $(findmnt $drive):
     mounted_drives += drive
     
@@ -16,8 +17,10 @@ for drive in attached_drives:
     percent = $(df --output=pcent $drive).splitlines()[1][:-1]
     if percent > 80:
       print("your drive is getting full!")
-    else:
-      unmounted_drives += drive
+  
+  # The drive is not mounted
+  else:
+    unmounted_drives += drive
     
     # some administrative output
     print("did you mean to mount " + drive + "?")
