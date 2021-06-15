@@ -16,7 +16,7 @@ for drive in attached_drives:
     
     # some administative output
     percent = $(df --output=pcent $drive).splitlines()[1][:-1]
-    if percent > 80:
+    if int(percent) > 80:
       print("your drive is getting full!")
   
   # The drive is not mounted
