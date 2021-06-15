@@ -6,8 +6,8 @@
 
 attached_drives = $(ls /dir | grep "sd").splitlines()
 
-mounted_drives = ()
-unmounted_drives = ()
+mounted_drives = {}
+unmounted_drives = {}
 for drive in attached_drives:
   if $(findmnt $drive):
     mounted_drives += drive
