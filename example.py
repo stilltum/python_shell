@@ -10,7 +10,7 @@ mounted_drives = {}
 unmounted_drives = {}
 for drive in attached_drives:
   # The drive is mounted
-  #   Note that if nothing is returned from a call it returns false
+  #   Note that if nothing is returned from a call it returns an empty list which evaluates to false
   if $(findmnt $drive):
     mounted_drives += drive
     
