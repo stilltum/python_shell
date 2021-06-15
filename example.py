@@ -4,7 +4,7 @@
 
 # The idea is that all commands within $() are commandline calls, unless it is prepended by another $, in which case it's a script variable
 
-attached_drives = $(ls /dir | grep "sd").splitlines()
+attached_drives = $(ls "/dev" | grep "sd").splitlines()
 
 mounted_drives = {}
 unmounted_drives = {}
